@@ -21,7 +21,7 @@ const NavBar = () => {
             key={`navId-${id}`}
             className="px-4 cursor-pointer font-medium text-gray-500 hover:scale-150 duration-75"
           >
-            {label}
+            <a href="About">{label}</a>
           </li>
         ))}
       </ul>
