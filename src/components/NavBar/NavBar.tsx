@@ -1,6 +1,7 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import { navLinks } from "./const";
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [showMenu, setshowMenu] = useState<boolean>(false);
@@ -21,7 +22,7 @@ const NavBar = () => {
             key={`navId-${id}`}
             className="px-4 cursor-pointer font-medium text-gray-500 hover:scale-150 duration-75"
           >
-            <a href="About">{label}</a>
+            <Link to={label} smooth duration={500}>{label}</Link>
           </li>
         ))}
       </ul>
@@ -39,7 +40,7 @@ const NavBar = () => {
               key={`navId-mobile-${id}`}
               className="px-4 cursor-pointer font-medium text-gray-500 hover:scale-150 duration-75"
             >
-              {label}
+              <Link onClick={handleMenuClick} to={label} smooth duration={500}>{label}</Link>
             </li>
           ))}
         </ul>

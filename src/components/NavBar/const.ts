@@ -13,7 +13,7 @@ export const navLinks = [
     },
     {
         id: 3,
-        label:"Experience"
+        label:"Skills"
     },
     {
         id: 4,
