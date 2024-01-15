@@ -1,4 +1,4 @@
-import arrayDestruct from "../../assets/portfolio/arrayDestruct.jpg";
+import arrayDestruct from "../../../assets/portfolio/arrayDestruct.jpg";
 
 const Portfolio = () => {
   return (

@@ -1,10 +1,10 @@
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { Home } from "./components/Home";
+import { About } from "./components/Pages/About";
+import { Contact } from "./components/Pages/Contact";
+import { Home } from "./components/Pages/Home";
 import { LeftMenu } from "./components/LeftMenu";
 import { NavBar } from "./components/NavBar";
-import { Portfolio } from "./components/Portfolio";
-import { Skills } from "./components/Skills";
+import { Portfolio } from "./components/Pages/Portfolio";
+import { Skills } from "./components/Pages/Skills";
 
 function App() {
   return (

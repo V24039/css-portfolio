@@ -1,9 +1,9 @@
-import html from "../../assets/html.png";
-import css from "../../assets/css.png";
-import javascript from "../../assets/javascript.png";
-import reactImage from "../../assets/react.png";
-import java from "../../assets/html.png";
-import springBoot from "../../assets/html.png";
+import html from "../../../assets/html.png";
+import css from "../../../assets/css.png";
+import javascript from "../../../assets/javascript.png";
+import reactImage from "../../../assets/react.png";
+import java from "../../../assets/html.png";
+import springBoot from "../../../assets/html.png";
 
 const Skills = () => {
   return (
