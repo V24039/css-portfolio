@@ -59,7 +59,7 @@ export const LeftMenu = () => {
           <a
             key={`left-link-${id}`}
             href={href}
-            className={`flex justify-between items-center w-full text-white ${
+            className={`flex justify-between items-center w-full ${
               style || ""
             }`}
             download={download}
