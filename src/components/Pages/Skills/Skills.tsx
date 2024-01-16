@@ -1,44 +1,53 @@
-import html from "../../../assets/html.png";
-import css from "../../../assets/css.png";
-import javascript from "../../../assets/javascript.png";
-import reactImage from "../../../assets/react.png";
-import java from "../../../assets/html.png";
-import springBoot from "../../../assets/html.png";
+import { DevelopmentType, ISkillValues, myCurrentSkills } from "./const";
 
 const Skills = () => {
+  const showSkills = (skill: ISkillValues) => (
+    <div className="flex flex-col items-start p-2 ">
+      <h3 className="text-2xl font-bold">{skill.name}</h3>
+      <p>{skill.level}</p>
+    </div>
+  );
+  const getCurrentSkills = () => {
+    const developemntBranch = [
+      DevelopmentType.FRONTEND,
+      DevelopmentType.BACKEND,
+    ];
+    const frontendSkills = myCurrentSkills.filter(
+      (value) => value.section === DevelopmentType.FRONTEND
+    );
+    const backendSkills = myCurrentSkills.filter(
+      (value) => value.section === DevelopmentType.BACKEND
+    );
+
+    return (
+      <>
+        {[frontendSkills, backendSkills].map((value, index) => (
+          <section className="border-4 p-2 border-gray-500 rounded-lg">
+            <h1 className="text-4xl font-bold underline p-2">
+              {developemntBranch[index]}
+            </h1>
+            <div className="grid grid-cols-2 sm:grid-cols-3">
+              {value.map((skill) => showSkills(skill))}
+            </div>
+          </section>
+        ))}
+      </>
+    );
+  };
+
   return (
-      <div id="Skills" className="max-w-screen-lg mx-auto flex flex-col justify-center w-full h-full pt-28">
-        <h1 className="text-4xl font-bold inline">
-          <text className="border-b-4 border-gray-500">Skills</text>
-        </h1>
-        <p className="py-8">The technologies I have worked with</p>
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
-          <div className="shadow-md shadow-gray-600 rounded-lg">
-            <img className="w-20 mx-auto" src={html} alt="" />
-            <p className="mt-4">HTML</p>
-          </div>
-          <div className="shadow-md shadow-gray-600 rounded-lg">
-            <img className="w-20 mx-auto" src={css} alt="" />
-            <p className="mt-4">CSS</p>
-          </div>
-          <div className="shadow-md shadow-gray-600 rounded-lg">
-            <img className="w-20 mx-auto" src={javascript} alt="" />
-            <p className="mt-4">Javascript</p>
-          </div>
-          <div className="shadow-md shadow-gray-600 rounded-lg">
-            <img className="w-20 mx-auto" src={reactImage} alt="" />
-            <p className="mt-4">React</p>
-          </div>
-          <div className="shadow-md shadow-gray-600 rounded-lg">
-            <img className="w-20 mx-auto" src={java} alt="" />
-            <p className="mt-4">Java</p>
-          </div>
-          <div className="shadow-md shadow-gray-600 rounded-lg">
-            <img className="w-20 mx-auto" src={springBoot} alt="" />
-            <p className="mt-4">Spring Boot</p>
-          </div>
-        </div>
+    <div
+      id="Skills"
+      className="max-w-screen-lg mx-auto flex flex-col justify-center w-full h-full pt-28"
+    >
+      <h1 className="text-4xl font-bold inline">
+        <text className="border-b-4 border-gray-500">Skills</text>
+      </h1>
+      <p className="pt-2 pb-6">The technical skills</p>
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 text-center py-8 px-12 sm:px-0">
+        {getCurrentSkills()}
       </div>
+    </div>
   );
 };
 

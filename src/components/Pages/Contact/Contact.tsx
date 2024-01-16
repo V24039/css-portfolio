@@ -1,47 +1,28 @@
-import React from "react";
+import { CgMail } from "react-icons/cg";
+import { IoLogoLinkedin} from "react-icons/io";
 
 const Contact = () => {
   return (
-      <div id="Contact" className="flex flex-col justify-center max-w-screen-lg mx-auto h-full pt-28">
-        <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Contact
-          </p>
-          <p className="py-6">
-            Please fill and submit the from to connect with me
-          </p>
-        </div>
-        <div className="flex justify-center items-center">
-          <form
-            action=""
-            method="POST"
-            className="flex flex-col w-full md:w-1/2"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            />
-            <input
-              type="text"
-              name="email"
-              placeholder="Enter your email"
-              className="my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            />
-            <textarea
-              name="message"
-              placeholder="Enter your message"
-              rows={10}
-              className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            ></textarea>
-
-            <button className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
-              Submit
-            </button>
-          </form>
-        </div>
+    <div
+      id="Contact"
+      className="flex flex-col justify-center max-w-screen-lg mx-auto h-full py-28"
+    >
+      <div className="pb-8">
+        <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+          Contact Me
+        </p>
       </div>
+      <div className="flex flex-row w-2/4 justify-around items-center m-auto gap-4">
+        <section className="flex flex-row items-center border-4 rounded-lg border-gray-500 p-2 gap-2">
+          <CgMail size={30} title="soganadgiVenu@gmail.com" />
+          <span><a href="mailto:soganadgivenu@gmail.com" className="hover:underline">soganadgivenu@gmail.com</a></span>
+        </section>
+        <section className="flex flex-row items-center border-4 rounded-lg border-gray-500 p-2 gap-2">
+          <IoLogoLinkedin size={30} title="Venu Soganadgi" />
+          <span><a href="https://www.linkedin.com/in/venu-soganadgi-b98483150" className="hover:underline">Venu Soganadgi</a></span>
+        </section>
+      </div>
+    </div>
   );
 };
 
