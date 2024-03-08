@@ -1,6 +1,7 @@
 import { IProjectValues, projects } from "./const";
 
 const Projects = () => {
+  
   const getProjects = (project: IProjectValues, index: number) => (
     <div key={`project-${index}`} className="flex flex-col gap-3 border-l-4 border-b-4 p-2 border-gray-500">
       <p className="text-2xl font-bold inline underline hover:text-violet-400">

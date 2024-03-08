@@ -7,7 +7,7 @@ import { Skills } from "./components/Pages/Skills";
 
 function App() {
   return (
-    <div className="text-white w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700">
+    <div className="text-white w-full bg-slate-950">
       <NavBar />
       <Home />
       <About />

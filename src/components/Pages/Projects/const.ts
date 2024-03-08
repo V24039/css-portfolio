@@ -2,6 +2,7 @@ export interface IProjectValues {
     label: string;
     descp: string;
     gitHub: string;
+    projectLink?:string
     techUsed: string[];
 }
 
@@ -18,6 +19,7 @@ export const projects:IProjectValues[] = [
     descp:
       "A spring application to obtain the weather of a city using the pin code for a particular date, using GeoNames and Visual Crossing weather API",
     gitHub: "https://github.com/V24039/Weather",
+    projectLink:"https://venuweather.netlify.app/",
     techUsed: ["Java", "SpringBoot", "Rest API"],
   },
   {

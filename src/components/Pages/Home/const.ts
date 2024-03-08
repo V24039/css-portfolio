@@ -13,7 +13,7 @@ export const links: ILinksValue[] = [
   {
     id: 0,
     element: LinkElements.LINKEDIN,
-    href: "https://www.linkedin.com/in/venu-soganadgi-b98483150",
+    href: "https://www.linkedin.com/in/venu-soganadgi",
   },
   {
     id: 1,
