@@ -1,12 +1,21 @@
 import { IProjectValues, projects } from "./const";
 
 const Projects = () => {
-  
   const getProjects = (project: IProjectValues, index: number) => (
-    <div key={`project-${index}`} className="flex flex-col gap-3 border-l-4 border-b-4 p-2 border-gray-500">
-      <p className="text-2xl font-bold inline underline hover:text-violet-400">
-        <a href={project.gitHub}>{project.label}</a>
-      </p>
+    <div
+      key={`project-${index}`}
+      className="flex flex-col gap-3 border-l-4 border-b-4 p-2 border-gray-500"
+    >
+      <span className="font-bold inline space-x-2">
+        <span className="text-2xl underline hover:text-violet-400">
+          <a href={project.projectLink}>{project.label}</a>
+        </span>
+        {project.projectLink && (
+          <span className="text-xl hover:text-violet-400">
+            <a href={project.gitHub}>[Github]</a>
+          </span>
+        )}
+      </span>
       <section>{project.descp}</section>
       <section>
         {project.techUsed.map((value) => (

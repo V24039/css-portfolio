@@ -5,7 +5,7 @@ import { IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
 
 export const Home = () => {
   const handleResumeDownload = () => {
-    const pdfUrl = "/Venu-G-Soganadgi-Resume.pdf";
+    const pdfUrl = "/VenuResume.pdf";
     window.open(pdfUrl)
   };
 
