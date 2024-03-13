@@ -43,7 +43,7 @@ const Skills = () => {
       <h1 className="text-4xl font-bold inline">
         <text className="border-b-4 border-gray-500">Skills</text>
       </h1>
-      <p className="pt-2 pb-6">The technical skills</p>
+      <p className="pt-2 pb-6">Technologies I've worked with:</p>
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 text-center py-8 px-12 sm:px-0">
         {getCurrentSkills()}
       </div>

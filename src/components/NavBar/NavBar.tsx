@@ -1,31 +1,39 @@
 import { FaBars, FaTimes } from "react-icons/fa";
-import { MdOutlineLightMode } from "react-icons/md";
 import { GrSystem } from "react-icons/gr";
-import { CiDark } from "react-icons/ci";
+import { CiDark, CiLight } from "react-icons/ci";
 import { navLinks } from "./const";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 const NavBar = () => {
   const [showMenu, setshowMenu] = useState<boolean>(false);
   const [showToggleMenu, setShowToggleMenu] = useState<boolean>(false);
-  const [currentTheme, setCurrentTheme] = useState<string>(
-    localStorage.getItem("theme") ?? "dark"
-  );
+  const [currentTheme, setCurrentTheme] = useState<string>("light");
 
   const handleMenuClick = () => {
     setshowMenu((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (currentTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [currentTheme]);
+
   const handleToggleClick = () => {
-    document.documentElement.classList.add('light')
     setShowToggleMenu((prev) => !prev);
+  };
+
+  const handleThemeChange = (theme: string) => {
+    setCurrentTheme(theme);
   };
 
   return (
     <nav id="Navbar" className="sticky top-0">
-      <div className="flex justify-between items-center w-full h-20 bg-black px-4">
-        <h1 className="text-3xl sm:text-4xl sm font-signature ml-2 text-white">
+      <div className="flex justify-between items-center w-full h-20 text-black bg-slate-200 dark:bg-black dark:text-white px-4">
+        <h1 className="text-3xl sm:text-4xl sm font-signature ml-2 text-black dark:text-white">
           Venu G Soganadgi
         </h1>
         <div className="flex justify-between">
@@ -33,7 +41,7 @@ const NavBar = () => {
             {currentTheme === "dark" ? (
               <CiDark size={30} />
             ) : (
-              <MdOutlineLightMode />
+              <CiLight size={30} />
             )}
             {showToggleMenu && (
               <div className="fixed right-auto top-15 bg-white rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400">
@@ -41,19 +49,21 @@ const NavBar = () => {
                   <li
                     key="toggle-dark"
                     className="flex items-center cursor-pointer font-medium text-gray-500 hover:bg-red-300"
+                    onClick={() => handleThemeChange("dark")}
                   >
                     <CiDark size={20} />
                     <span className="px-2">Dark</span>
                   </li>
                   <li
-                    key="toggle-dark"
+                    key="toggle-light"
                     className="flex items-center cursor-pointer font-medium text-gray-500 hover:bg-red-300"
+                    onClick={() => handleThemeChange("light")}
                   >
-                    <MdOutlineLightMode size={20} />
+                    <CiLight size={20} />
                     <span className="px-2">Light</span>
                   </li>
                   <li
-                    key="toggle-dark"
+                    key="toggle-system"
                     className="flex items-center cursor-pointer font-medium text-gray-500 hover:bg-red-300"
                   >
                     <GrSystem size={20} />

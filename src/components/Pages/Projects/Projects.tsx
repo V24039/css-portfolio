@@ -4,9 +4,9 @@ const Projects = () => {
   const getProjects = (project: IProjectValues, index: number) => (
     <div
       key={`project-${index}`}
-      className="flex flex-col gap-3 border-l-4 border-b-4 p-2 border-gray-500"
+      className="flex flex-col flex-wrap gap-3 p-2"
     >
-      <span className="font-bold inline space-x-2">
+      <span className="font-bold flex-wrap space-x-2">
         <span className="text-2xl underline hover:text-violet-400">
           <a href={project.projectLink}>{project.label}</a>
         </span>
@@ -17,9 +17,9 @@ const Projects = () => {
         )}
       </span>
       <section>{project.descp}</section>
-      <section>
+      <section className="flex flex-row flex-wrap">
         {project.techUsed.map((value) => (
-          <span className="font-bold m-2 p-1 border-4 border-sky-700 text-sky-200 rounded-lg">
+          <span className="font-bold m-2 p-2 px-3 border-4 border-sky-700 text-sky-200 rounded-lg">
             {value}
           </span>
         ))}
@@ -36,7 +36,7 @@ const Projects = () => {
         <text className="border-b-4 border-gray-500">Projects</text>
       </h1>
       <p className="pt-2 pb-6">Checkout some of my projects</p>
-      <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
         {projects.map((project, index) => getProjects(project, index))}
       </div>
     </div>
