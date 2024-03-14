@@ -5,6 +5,9 @@ import { navLinks } from "./const";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
+const toggleClasses =
+  "flex items-center cursor-pointer font-medium p-1 rounded-lg text-gray-500 hover:bg-cyan-100 hover:dark:bg-emerald-50";
+
 const NavBar = () => {
   const [showMenu, setshowMenu] = useState<boolean>(false);
   const [showToggleMenu, setShowToggleMenu] = useState<boolean>(false);
@@ -13,6 +16,10 @@ const NavBar = () => {
   const handleMenuClick = () => {
     setshowMenu((prev) => !prev);
   };
+
+  useEffect(()=>{
+    handleThemeChange("window")
+  },[])
 
   useEffect(() => {
     if (currentTheme === "dark") {
@@ -27,7 +34,15 @@ const NavBar = () => {
   };
 
   const handleThemeChange = (theme: string) => {
-    setCurrentTheme(theme);
+    if (theme === "window") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        setCurrentTheme("dark");
+      } else {
+        setCurrentTheme("light");
+      }
+    } else {
+      setCurrentTheme(theme);
+    }
   };
 
   return (
@@ -36,7 +51,7 @@ const NavBar = () => {
         <h1 className="text-3xl sm:text-4xl sm font-signature ml-2 text-black dark:text-white">
           Venu G Soganadgi
         </h1>
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center gap-4">
           <div className="hover:cursor-pointer" onClick={handleToggleClick}>
             {currentTheme === "dark" ? (
               <CiDark size={30} />
@@ -44,11 +59,11 @@ const NavBar = () => {
               <CiLight size={30} />
             )}
             {showToggleMenu && (
-              <div className="fixed right-auto top-15 bg-white rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400">
+              <div className="fixed md:right-auto sm:right-3 top-16 bg-white rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400">
                 <ul className="space-y-4">
                   <li
                     key="toggle-dark"
-                    className="flex items-center cursor-pointer font-medium text-gray-500 hover:bg-red-300"
+                    className={toggleClasses}
                     onClick={() => handleThemeChange("dark")}
                   >
                     <CiDark size={20} />
@@ -56,7 +71,7 @@ const NavBar = () => {
                   </li>
                   <li
                     key="toggle-light"
-                    className="flex items-center cursor-pointer font-medium text-gray-500 hover:bg-red-300"
+                    className={toggleClasses}
                     onClick={() => handleThemeChange("light")}
                   >
                     <CiLight size={20} />
@@ -64,7 +79,8 @@ const NavBar = () => {
                   </li>
                   <li
                     key="toggle-system"
-                    className="flex items-center cursor-pointer font-medium text-gray-500 hover:bg-red-300"
+                    className={toggleClasses}
+                    onClick={() => handleThemeChange("window")}
                   >
                     <GrSystem size={20} />
                     <span className="px-2 text-left">System</span>
@@ -77,7 +93,7 @@ const NavBar = () => {
             {navLinks.map(({ id, label }) => (
               <li
                 key={`navId-${id}`}
-                className="px-4 cursor-pointer font-medium text-gray-500 hover:scale-150 duration-75"
+                className="p-2 cursor-pointer rounded-md font-medium text-gray-500 hover:bg-cyan-100 hover:dark:bg-emerald-50 duration-75"
               >
                 <Link to={label} smooth duration={500}>
                   {label}
@@ -87,16 +103,16 @@ const NavBar = () => {
           </ul>
           <div
             onClick={handleMenuClick}
-            className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+            className="cursor-pointer right-10 z-10 text-gray-500 md:hidden"
           >
             {showMenu ? <FaTimes size={20} /> : <FaBars size={20} />}
           </div>
           {showMenu && (
-            <ul className="flex flex-col justify-center items-center absolute top-20 left-0 w-full h-auto bg-gradient-to-b from-black to-gray-800 text-gray-500">
+            <ul className="md:hidden fixed top-6 right-3 bg-white rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400">
               {navLinks.map(({ id, label }) => (
                 <li
                   key={`navId-mobile-${id}`}
-                  className="px-4 cursor-pointer font-medium text-gray-500 hover:scale-150 duration-75"
+                  className="px-4 cursor-pointer font-medium text-gray-500 hover:bg-emerald-50 duration-75"
                 >
                   <Link
                     onClick={handleMenuClick}

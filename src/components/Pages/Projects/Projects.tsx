@@ -19,7 +19,7 @@ const Projects = () => {
       <section>{project.descp}</section>
       <section className="flex flex-row flex-wrap">
         {project.techUsed.map((value) => (
-          <span className="font-bold m-2 p-2 px-3 border-4 border-sky-700 text-sky-200 rounded-lg">
+          <span className="font-bold m-2 p-2 px-3 border-2 text-black border-slate-700 bg-stone-300 dark:border-sky-700 dark:text-sky-200 dark:bg-teal-950 rounded-lg">
             {value}
           </span>
         ))}
@@ -36,7 +36,7 @@ const Projects = () => {
         <text className="border-b-4 border-gray-500">Projects</text>
       </h1>
       <p className="pt-2 pb-6">Checkout some of my projects</p>
-      <div className="grid grid-cols-1 gap-1 md:grid-cols-3">
+      <div className="w-full grid grid-cols-1 gap-1 md:grid-cols-3">
         {projects.map((project, index) => getProjects(project, index))}
       </div>
     </div>
