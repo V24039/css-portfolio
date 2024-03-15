@@ -1,11 +1,12 @@
 export interface IProjectValues {
-    label: string;
-    descp: string;
-    gitHub: string;
-    techUsed: string[];
+  label: string;
+  descp: string;
+  gitHub: string;
+  projectLink?: string;
+  techUsed: string[];
 }
 
-export const projects:IProjectValues[] = [
+export const projects: IProjectValues[] = [
   {
     label: "Teacher-Student Management System",
     descp:
@@ -14,17 +15,18 @@ export const projects:IProjectValues[] = [
     techUsed: ["Java", "SpringBoot", "Rest API"],
   },
   {
-    label: "Weather Data using PostalCode",
+    label: "Weather application",
     descp:
-      "A spring application to obtain the weather of a city using the pin code for a particular date, using GeoNames and Visual Crossing weather API",
+      "Developed a Real-Time Weather Application using React and TypeScript. This application is designed to provide users with dynamic and interactive weather. To ensure a seamless flow of data across all components, I utilized the React Context API for global state management without compromising performance. For crafting a user-friendly interface, I used Material-UI with a focus on responsive design.",
     gitHub: "https://github.com/V24039/Weather",
-    techUsed: ["Java", "SpringBoot", "Rest API"],
+    projectLink: "https://venuweather.netlify.app/",
+    techUsed: ["ReactJs", "TypeScript", "MaterialUI"],
   },
   {
     label: "Task Manager",
     descp:
       "A React application to create a task and asign the task to 'Added', 'Started', 'Completed'.",
     gitHub: "https://github.com/V24039/task-manager",
-    techUsed: ["ReactJs", "HTML", "CSS", "Formik","yup"],
+    techUsed: ["ReactJs", "HTML", "CSS", "Formik", "yup"],
   },
 ];
