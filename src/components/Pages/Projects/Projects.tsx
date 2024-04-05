@@ -7,11 +7,11 @@ const Projects = () => {
       className="flex flex-col flex-wrap gap-3 p-2"
     >
       <span className="font-bold flex-wrap space-x-2">
-        <span className="text-2xl underline hover:text-violet-400">
-          <a href={project.projectLink}>{project.label}</a>
+        <span className="text-2xl underline hover:text-violet-400 hover:cursor-pointer">
+          <a href={project.projectLink || project.gitHub}>{project.label}</a>
         </span>
         {project.projectLink && (
-          <span className="text-xl hover:text-violet-400">
+          <span className="text-xl hover:text-violet-400 hover:cursor-pointer">
             <a href={project.gitHub}>[Github]</a>
           </span>
         )}
