@@ -31,7 +31,7 @@ export const Home = () => {
         <section>
           <h2 className="font-bold">Hello, I am Venu</h2>
           <h2 className="text-4xl sm:text-6xl font-bold">
-            Fullstack developer
+            Frontend developer
           </h2>
         </section>
         <section>
