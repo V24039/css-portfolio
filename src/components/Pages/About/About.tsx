@@ -10,7 +10,7 @@ const About = () => {
         <text className="border-b-4 border-gray-500">About</text>
       </p>
       <p className="text-xl pb-5">
-        I am a software developer with 2 years of professional experience
+        I am a software developer with 3 years of professional experience
         specializing in ReactJs and TypeScript. I have leveraged these
         technologies to build and optimize interactive, user-friendly
         applications, and have a good understanding of web development
