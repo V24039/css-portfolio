@@ -19,11 +19,26 @@ const About = () => {
         record of working collaboratively with cross-functional teams to deliver
         high-quality software solutions and improve user experience.
       </p>
-
-      <p className="text-xl mt-5 text-gray-700 dark:text-gray-300 leading-relaxed">
-        Beyond my core frontend work, I've also explored backend development
-        using Java/Spring Boot in personal projects and continuously sharpen my
-        problem-solving skills through platforms like LeetCode.
+      <p className="text-xl pb-5">
+        I am a software developer with 3 years of professional experience
+        specializing in ReactJs and TypeScript. I have leveraged these
+        technologies to build and optimize interactive, user-friendly
+        applications, and have a good understanding of web development
+        fundamentals.
+      </p>
+      <p className="text-xl pb-5">
+        In addition to my professional experience, I have hands-on experience
+        with Java and Spring Boot through personal projects. This experience has
+        given me a strong foundation in back-end development and has allowed me
+        to build full-stack applications.
+      </p>
+      <p className="text-xl">
+        To further enhance my data structures and algorithms knowledge, I have
+        solved approximately 90 problems on LeetCode. This practice has not only
+        improved my problem-solving skills but also deepened my understanding of
+        algorithmic efficiency and complexity analysis. I am always eager to
+        learn and improve, and I believe that my blend of experiences and
+        eagerness to grow make me a strong software developer.
       </p>
     </div>
   );

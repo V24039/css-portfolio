@@ -42,9 +42,7 @@ export const Home = () => {
       <div className="flex flex-col items-center justify-center h-full w-full text-center md:items-start md:text-left gap-6 mt-8 md:mt-0">
         {/* Introduction Text */}
         <section>
-          <h2 className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300"> {/* Adjusted size/weight */}
-            Hello, I'm Venu
-          </h2>
+          <h2 className="font-bold">Hello, I am Venu</h2>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mt-1"> {/* Changed h2 to h1 for semantic SEO */}
             Frontend Developer
           </h1>
