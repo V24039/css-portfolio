@@ -7,26 +7,46 @@ export interface IProjectValues {
 }
 
 export const projects: IProjectValues[] = [
-  {
-    label: "Teacher-Student Management System",
-    descp:
-      "This is a simple Spring Boot project to manage the profiles of Teachers and Students. It provides a platform for teachers to create and manage student profiles, including the ability to record and update student marks. On the other hand, students have the autonomy to manage their own profiles and access their academic results.",
-    gitHub: "https://github.com/V24039/Student",
-    techUsed: ["Java", "SpringBoot", "Rest API"],
-  },
+  // --- Projects from Resume ---
   {
     label: "Weather application",
     descp:
-      "Developed a Real-Time Weather Application using React and TypeScript. This application is designed to provide users with dynamic and interactive weather. To ensure a seamless flow of data across all components, I utilized the React Context API for global state management without compromising performance. For crafting a user-friendly interface, I used Material-UI with a focus on responsive design.",
+      "Developed a real-time weather app with React, TypeScript, and Material-UI. Implemented global state management with React Context API. Designed a responsive, visually appealing UI with custom Material-UI components.",
     gitHub: "https://github.com/V24039/Weather",
     projectLink: "https://venuweather.netlify.app/",
-    techUsed: ["ReactJs", "TypeScript", "MaterialUI"],
+    techUsed: ["ReactJs", "TypeScript", "MaterialUI", "Context API"],
   },
+  {
+    label: "Countries Details",
+    descp:
+      "Developed a country info website using React, TypeScript, and CSS. Implemented a search and filtering system. Enhanced UX with a theme toggle.",
+    gitHub: "https://github.com/V24039/Countries-Details",
+    projectLink: "https://venu-countries-details.netlify.app/",
+    techUsed: ["ReactJs", "TypeScript", "CSS", "Rest API"],
+  },
+  // --- Open Source Contributions from Resume ---
+  {
+    label: "One Army (Open Source Contribution)",
+    descp:
+      "Contributed to the One Army platform by fixing UI bugs (e.g., preventing empty comments via validation) and enhancing features (e.g., preventing map pin additions for incomplete profiles). Wrote unit and end-to-end tests using Jest and Cypress to ensure code quality.",
+    gitHub: "https://github.com/ONEARMY",
+    techUsed: ["ReactJs", "TypeScript", "Jest", "Cypress"],
+  },
+
+  /*
   {
     label: "Task Manager",
     descp:
-      "A React application to create a task and asign the task to 'Added', 'Started', 'Completed'.",
+      "A React application to create, manage, and track tasks through different stages ('Added', 'Started', 'Completed'). Implemented form handling and validation using Formik and Yup.",
     gitHub: "https://github.com/V24039/task-manager",
-    techUsed: ["ReactJs", "HTML", "CSS", "Formik", "yup"],
+    techUsed: ["ReactJs", "HTML", "CSS", "Formik", "Yup"],
   },
+  {
+    label: "Teacher-Student Management System",
+    descp:
+      "A Spring Boot application to manage teacher and student profiles. Allows teachers to manage student details and marks, while students can view their profiles and results. Built using RESTful APIs.",
+    gitHub: "https://github.com/V24039/Student",
+    techUsed: ["Java", "SpringBoot", "Rest API"],
+  },
+  */
 ];
