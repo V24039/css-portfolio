@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 const toggleClasses =
-  "flex items-center cursor-pointer font-medium p-1 rounded-lg text-gray-500 hover:bg-cyan-100 hover:dark:bg-emerald-50";
+  "flex items-center cursor-pointer font-medium p-2 rounded-lg text-gray-500 hover:bg-cyan-100 hover:dark:bg-emerald-50";
 
 const NavBar = () => {
   const [showMenu, setshowMenu] = useState<boolean>(false);
@@ -46,8 +46,8 @@ const NavBar = () => {
   };
 
   return (
-    <nav id="Navbar" className="sticky top-0">
-      <div className="flex justify-between items-center w-full h-20 text-black bg-slate-200 dark:bg-black dark:text-white px-4">
+    <nav id="Navbar" className="sticky top-0 z-50 transition-colors duration-300 backdrop-blur-sm bg-slate-200/80 dark:bg-black/80">
+      <div className="flex justify-between items-center w-full h-20 text-black dark:text-white px-4 max-w-7xl mx-auto">
         <h1 className="text-3xl sm:text-4xl sm font-signature ml-2 text-black dark:text-white">
           Venu G Soganadgi
         </h1>
@@ -59,7 +59,7 @@ const NavBar = () => {
               <CiLight size={30} />
             )}
             {showToggleMenu && (
-              <div className="fixed md:right-auto sm:right-3 top-16 bg-white rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400">
+              <div className="fixed right-4 md:right-auto top-16 bg-white/90 backdrop-blur-md rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800/90 dark:text-slate-400 shadow-lg border border-gray-200 dark:border-slate-700">
                 <ul className="space-y-4">
                   <li
                     key="toggle-dark"

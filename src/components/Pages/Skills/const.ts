@@ -8,97 +8,141 @@ export interface ISkillValues {
 
 export enum DevelopmentType {
   FRONTEND = "Frontend",
-  BACKEND = "Backend",
+  LANGUAGES = "Languages",
+  TOOLS_TESTING = "DevOps & Tools",
 }
 
 export enum Levels {
+  ADVANCED = "Advanced",
   INTERMEDIATE = "Intermediate",
   BASIC = "Basic",
 }
 
 export const myCurrentSkills: ISkillValues[] = [
+  // --- Frontend ---
   {
     key: "react",
-    name: "ReactJs",
+    name: "React",
+    level: Levels.ADVANCED,
+    section: DevelopmentType.FRONTEND,
+    imageUrl: "/assets/react.png",
+  },
+  {
+    key: "redux",
+    name: "Redux (Toolkit, RTK Query, Saga)",
     level: Levels.INTERMEDIATE,
     section: DevelopmentType.FRONTEND,
-    imageUrl: '/assests/react.png'
+    imageUrl: "/assets/redux.png",
   },
+  {
+    key: "material",
+    name: "Material-UI",
+    level: Levels.INTERMEDIATE,
+    section: DevelopmentType.FRONTEND,
+    imageUrl: "/assets/material.png",
+  },
+  {
+    key: "tailwind",
+    name: "Tailwind CSS",
+    level: Levels.INTERMEDIATE,
+    section: DevelopmentType.FRONTEND,
+    imageUrl: "/assets/tailwind.png",
+  },
+
+  // --- Languages ---
   {
     key: "ts",
     name: "TypeScript",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.FRONTEND,
-    imageUrl: '/assests/typescript.png'
+    level: Levels.ADVANCED,
+    section: DevelopmentType.LANGUAGES,
+    imageUrl: "/assets/typescript.png",
   },
   {
     key: "js",
     name: "JavaScript",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.FRONTEND,
-    imageUrl: '/assests/javascript.png'
+    level: Levels.ADVANCED,
+    section: DevelopmentType.LANGUAGES,
+    imageUrl: "/assets/javascript.png",
   },
   {
     key: "html",
     name: "HTML",
     level: Levels.INTERMEDIATE,
+    section: DevelopmentType.LANGUAGES,
+    imageUrl: "/assets/html.png",
+  },
+  {
+    key: "css",
+    name: "CSS",
+    level: Levels.INTERMEDIATE,
+    section: DevelopmentType.LANGUAGES,
+    imageUrl: "/assets/css.png",
+  },
+
+  // --- DevOps & Tools ---
+  {
+    key: "git",
+    name: "Git/GitHub",
+    level: Levels.INTERMEDIATE,
+    section: DevelopmentType.TOOLS_TESTING,
+    imageUrl: "/assets/github.png",
+  },
+  // {
+  //   key: "azure",
+  //   name: "Azure",
+  //   level: Levels.BASIC,
+  //   section: DevelopmentType.TOOLS_TESTING,
+  //   imageUrl: "/assets/azure.png",
+  // },
+  /*
+  {
+    key: "formik",
+    name: "Formik/Yup",
+    level: Levels.INTERMEDIATE,
     section: DevelopmentType.FRONTEND,
-    imageUrl: '/assests/html.png'
+    imageUrl: "/assets/formik.png",
   },
   {
     key: "java",
     name: "Java",
     level: Levels.INTERMEDIATE,
     section: DevelopmentType.BACKEND,
-    imageUrl: '/assests/java.png'
-  },
-  {
-    key: "css",
-    name: "CSS",
-    level: Levels.BASIC,
-    section: DevelopmentType.FRONTEND,
-    imageUrl: '/assests/css.png'
+    imageUrl: "/assets/java.png",
   },
   {
     key: "spring",
     name: "SpringBoot",
     level: Levels.BASIC,
     section: DevelopmentType.BACKEND,
-    imageUrl: '/assests/spring.png'
+    imageUrl: "/assets/spring.png",
   },
   {
     key: "node",
     name: "NodeJS",
     level: Levels.BASIC,
     section: DevelopmentType.BACKEND,
-    imageUrl: '/assests/node.png'
+    imageUrl: "/assets/node.png",
   },
   {
     key: "express",
     name: "ExpressJS",
     level: Levels.BASIC,
     section: DevelopmentType.BACKEND,
-    imageUrl: '/assests/express.png'
+    imageUrl: "/assets/express.png",
   },
   {
     key: "mongo",
     name: "MongoDB",
     level: Levels.BASIC,
     section: DevelopmentType.BACKEND,
-    imageUrl: '/assests/mongo.png'
+    imageUrl: "/assets/mongo.png",
   },
   {
-    key: "git",
-    name: "GIT",
+    key: "jest",
+    name: "Jest",
     level: Levels.BASIC,
-    section: DevelopmentType.BACKEND,
-    imageUrl: '/assests/github.png'
+    section: DevelopmentType.TOOLS_TESTING,
+    imageUrl: "/assets/jest.png",
   },
-  {
-    key: "material",
-    name: "MateriUI",
-    level: Levels.BASIC,
-    section: DevelopmentType.BACKEND,
-    imageUrl: '/assests/material.png'
-  },
+  */
 ];
