@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" className="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,6 +27,23 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Venu G Soganadgi</title>
+    <script>
+      // Applies the saved theme before first paint so dark-mode visitors
+      // never see a flash of the light theme. Keep the storage key in sync
+      // with THEME_STORAGE_KEY in src/components/NavBar/NavBar.tsx.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var isDark =
+            stored === "dark" ||
+            ((!stored || stored === "system") &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", isDark);
+        } catch (e) {
+          /* localStorage unavailable - fall back to the light theme. */
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

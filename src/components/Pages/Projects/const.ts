@@ -32,21 +32,4 @@ export const projects: IProjectValues[] = [
     gitHub: "https://github.com/ONEARMY",
     techUsed: ["ReactJs", "TypeScript", "Jest", "Cypress"],
   },
-
-  /*
-  {
-    label: "Task Manager",
-    descp:
-      "A React application to create, manage, and track tasks through different stages ('Added', 'Started', 'Completed'). Implemented form handling and validation using Formik and Yup.",
-    gitHub: "https://github.com/V24039/task-manager",
-    techUsed: ["ReactJs", "HTML", "CSS", "Formik", "Yup"],
-  },
-  {
-    label: "Teacher-Student Management System",
-    descp:
-      "A Spring Boot application to manage teacher and student profiles. Allows teachers to manage student details and marks, while students can view their profiles and results. Built using RESTful APIs.",
-    gitHub: "https://github.com/V24039/Student",
-    techUsed: ["Java", "SpringBoot", "Rest API"],
-  },
-  */
 ];

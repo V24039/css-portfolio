@@ -14,6 +14,7 @@ export const SkillCard = ({ skill }: Props) => {
         <img
           src={skill.imageUrl}
           alt={skill.name}
+          loading="lazy"
           className="w-16 h-16 object-contain transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:rotate-3"
         />
         <span className="font-medium text-sm text-gray-800 dark:text-gray-200">
