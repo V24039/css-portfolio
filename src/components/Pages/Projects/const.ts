@@ -7,29 +7,32 @@ export interface IProjectValues {
 }
 
 export const projects: IProjectValues[] = [
-  // --- Projects from Resume ---
   {
-    label: "Weather application",
+    label: "One Army Community Platform",
     descp:
-      "Developed a real-time weather app with React, TypeScript, and Material-UI. Implemented global state management with React Context API. Designed a responsive, visually appealing UI with custom Material-UI components.",
-    gitHub: "https://github.com/V24039/Weather",
-    projectLink: "https://venuweather.netlify.app/",
-    techUsed: ["ReactJs", "TypeScript", "MaterialUI", "Context API"],
+      "Open source contribution. Architected a reusable, accessible Pagination component with URL parameter state persistence to replace legacy infinite loading. Refactored the SpaceProfile architecture into modular sub-components (MemberHistory, UserStatistics) to enhance mobile responsiveness, and optimized authentication redirection flows and root-level edit validation to improve user conversion and data hygiene.",
+    gitHub: "https://github.com/ONEARMY/community-platform",
+    techUsed: ["ReactJs", "TypeScript", "Accessibility", "Jest", "Cypress"],
   },
   {
-    label: "Countries Details",
+    label: "E-Commerce Storefront",
     descp:
-      "Developed a country info website using React, TypeScript, and CSS. Implemented a search and filtering system. Enhanced UX with a theme toggle.",
-    gitHub: "https://github.com/V24039/Countries-Details",
-    projectLink: "https://venu-countries-details.netlify.app/",
-    techUsed: ["ReactJs", "TypeScript", "CSS", "Rest API"],
+      "A storefront built on the Next.js App Router with end-to-end type safety: tRPC routers on the server, Zod schema validation, and TanStack Query for data fetching. Implements a multi-step account creation flow with email verification, route protection behind an auth provider, and a reusable set of form inputs and a custom pagination hook.",
+    gitHub: "https://github.com/V24039/next-ecommerce",
+    techUsed: ["NextJs", "TypeScript", "tRPC", "Zod", "TanStack Query", "Tailwind CSS"],
   },
-  // --- Open Source Contributions from Resume ---
   {
-    label: "One Army (Open Source Contribution)",
+    label: "Frontend Fundamentals Reference",
     descp:
-      "Contributed to the One Army platform by fixing UI bugs (e.g., preventing empty comments via validation) and enhancing features (e.g., preventing map pin additions for incomplete profiles). Wrote unit and end-to-end tests using Jest and Cypress to ensure code quality.",
-    gitHub: "https://github.com/ONEARMY",
-    techUsed: ["ReactJs", "TypeScript", "Jest", "Cypress"],
+      "A self-built interactive reference covering JavaScript fundamentals — closures, prototypes, this-binding, scope, promises and async patterns, and collection methods — alongside CSS layout demos, each with runnable examples. Built around a reusable component set (accordion, syntax-highlighted code display, in-page index) with nested routing and Redux Toolkit for state.",
+    gitHub: "https://github.com/V24039/learn_web",
+    techUsed: ["ReactJs", "TypeScript", "Vite", "Redux Toolkit", "React Router"],
+  },
+  {
+    label: "Event Platform",
+    descp:
+      "A multi-page events site built as a frontend engineering assignment, using the Next.js App Router and Tailwind. Structured around components designed for reuse across every page — image carousel, tab navigation, and text/image content blocks — with scroll-triggered animations throughout.",
+    gitHub: "https://github.com/V24039/css-FrontendTask",
+    techUsed: ["NextJs", "JavaScript", "Tailwind CSS", "React Icons"],
   },
 ];

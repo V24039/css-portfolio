@@ -30,13 +30,13 @@ const Projects = () => {
   return (
     <div
       id="Projects"
-      className="max-w-screen-lg mx-auto flex flex-col justify-center w-full h-full pt-24 md:h-screen"
+      className="max-w-screen-lg mx-auto flex flex-col justify-center w-full h-full pt-24 pb-16 px-4"
     >
       <h1 className="text-4xl font-bold inline">
         <span className="border-b-4 border-gray-500">Projects</span>
       </h1>
       <p className="pt-2 pb-6">Checkout some of my projects</p>
-      <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div className="w-full grid grid-cols-1 gap-6 md:grid-cols-2">
         {projects.map((project, index) => getProjects(project, index))}
       </div>
     </div>
