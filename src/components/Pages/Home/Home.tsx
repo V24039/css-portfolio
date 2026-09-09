@@ -29,7 +29,7 @@ export const Home = () => {
       <div className="flex-shrink-0 mt-20 md:mt-0">
         <img
           src={MyImage}
-          alt="Venu - Frontend Developer"
+          alt="Venu - Senior Frontend Engineer"
           className="rounded-3xl w-64 h-64 md:w-80 md:h-80 object-cover mx-auto"
         />
       </div>
@@ -40,14 +40,15 @@ export const Home = () => {
             Hello, I'm Venu
           </h2>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mt-1">
-            Frontend Developer
+            Senior Frontend Engineer
           </h1>
           <p className="mt-4 text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-xl">
-            A Technology Analyst with 3+ years of expertise in React,
-            TypeScript, and JavaScript, focused on developing responsive user
-            interfaces and enhancing application performance. Proven track
-            record collaborating with cross-functional teams to deliver
-            high-quality software solutions.
+            Senior Frontend Engineer with 4+ years of experience architecting
+            high-performance web applications and enterprise platforms. Lead
+            React developer for complex UI systems built on Palantir React
+            OSDK, with Palantir AIP integrated for AI-driven workflows. Expert
+            in TypeScript, parallel API orchestration, LLM schema validation,
+            and state management.
           </p>
         </section>
 

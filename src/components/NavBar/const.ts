@@ -17,6 +17,10 @@ export const navLinks = [
     },
     {
         id: 4,
+        label:"Education"
+    },
+    {
+        id: 5,
         label:"Contact"
     }
 ];
