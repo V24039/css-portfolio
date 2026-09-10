@@ -1,90 +1,60 @@
-export interface ISkillValues {
+export interface ISkillGroup {
   key: string;
-  name: string;
-  level: string;
-  section: string;
-  imageUrl: string;
+  title: string;
+  skills: string[];
 }
 
-export enum DevelopmentType {
-  FRONTEND = "Frontend",
-  LANGUAGES = "Languages",
-  TOOLS_TESTING = "DevOps & Tools",
-}
-
-export enum Levels {
-  ADVANCED = "Advanced",
-  INTERMEDIATE = "Intermediate",
-  BASIC = "Basic",
-}
-
-export const myCurrentSkills: ISkillValues[] = [
-  // --- Frontend ---
+export const skillGroups: ISkillGroup[] = [
   {
-    key: "react",
-    name: "React",
-    level: Levels.ADVANCED,
-    section: DevelopmentType.FRONTEND,
-    imageUrl: "/assets/react.png",
+    key: "frontend",
+    title: "Frontend Frameworks",
+    skills: [
+      "React",
+      "Redux",
+      "Redux Toolkit",
+      "RTK Query",
+      "Redux-Saga",
+      "Formik",
+      "Yup",
+      "Material-UI",
+      "Tailwind CSS",
+    ],
   },
   {
-    key: "redux",
-    name: "Redux (Toolkit, RTK Query, Saga)",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.FRONTEND,
-    imageUrl: "/assets/redux.png",
+    key: "palantir",
+    title: "Palantir Platform",
+    skills: [
+      "React OSDK",
+      "AIP (Ontology objects)",
+      "AIP (LLM blocks)",
+      "Foundry-backed APIs",
+    ],
   },
   {
-    key: "material",
-    name: "Material-UI",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.FRONTEND,
-    imageUrl: "/assets/material.png",
+    key: "languages",
+    title: "Languages",
+    skills: ["JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3"],
   },
   {
-    key: "tailwind",
-    name: "Tailwind CSS",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.FRONTEND,
-    imageUrl: "/assets/tailwind.png",
-  },
-
-  // --- Languages ---
-  {
-    key: "ts",
-    name: "TypeScript",
-    level: Levels.ADVANCED,
-    section: DevelopmentType.LANGUAGES,
-    imageUrl: "/assets/typescript.png",
+    key: "devops",
+    title: "DevOps & Tools",
+    skills: [
+      "Git",
+      "GitHub",
+      "Azure Pipelines",
+      "CI/CD",
+      "Chrome DevTools",
+      "React DevTools",
+    ],
   },
   {
-    key: "js",
-    name: "JavaScript",
-    level: Levels.ADVANCED,
-    section: DevelopmentType.LANGUAGES,
-    imageUrl: "/assets/javascript.png",
-  },
-  {
-    key: "html",
-    name: "HTML",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.LANGUAGES,
-    imageUrl: "/assets/html.png",
-  },
-  {
-    key: "css",
-    name: "CSS",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.LANGUAGES,
-    imageUrl: "/assets/css.png",
-  },
-
-  // --- DevOps & Tools ---
-  {
-    key: "git",
-    name: "Git/GitHub",
-    level: Levels.INTERMEDIATE,
-    section: DevelopmentType.TOOLS_TESTING,
-    imageUrl: "/assets/github.png",
+    key: "engineering",
+    title: "Engineering",
+    skills: [
+      "REST API integration",
+      "JSON schema validation",
+      "Localization (i18n)",
+      "Offline data storage",
+    ],
   },
 ];

@@ -7,17 +7,15 @@ export interface IProjectValues {
 }
 
 export const projects: IProjectValues[] = [
-  // --- Projects from Resume ---
   {
-    label: "Weather application",
+    label: "One Army Community Platform",
     descp:
-      "Developed a real-time weather app with React, TypeScript, and Material-UI. Implemented global state management with React Context API. Designed a responsive, visually appealing UI with custom Material-UI components.",
-    gitHub: "https://github.com/V24039/Weather",
-    projectLink: "https://venuweather.netlify.app/",
-    techUsed: ["ReactJs", "TypeScript", "MaterialUI", "Context API"],
+      "Open source contribution. Architected a reusable, accessible Pagination component with URL parameter state persistence to replace legacy infinite loading. Refactored the SpaceProfile architecture into modular sub-components (MemberHistory, UserStatistics) to enhance mobile responsiveness, and optimized authentication redirection flows and root-level edit validation to improve user conversion and data hygiene.",
+    gitHub: "https://github.com/ONEARMY/community-platform",
+    techUsed: ["ReactJs", "TypeScript", "Accessibility", "Jest", "Cypress"],
   },
   {
-    label: "Countries Details",
+    label: "E-Commerce Storefront",
     descp:
       "Developed a country info website using React, TypeScript, and CSS. Implemented a search and filtering system. Enhanced UX with a theme toggle.",
     gitHub: "https://github.com/V24039/Countries-Details",
