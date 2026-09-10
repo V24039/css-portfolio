@@ -17,22 +17,17 @@ export const projects: IProjectValues[] = [
   {
     label: "E-Commerce Storefront",
     descp:
-      "A storefront built on the Next.js App Router with end-to-end type safety: tRPC routers on the server, Zod schema validation, and TanStack Query for data fetching. Implements a multi-step account creation flow with email verification, route protection behind an auth provider, and a reusable set of form inputs and a custom pagination hook.",
-    gitHub: "https://github.com/V24039/next-ecommerce",
-    techUsed: ["NextJs", "TypeScript", "tRPC", "Zod", "TanStack Query", "Tailwind CSS"],
+      "Developed a country info website using React, TypeScript, and CSS. Implemented a search and filtering system. Enhanced UX with a theme toggle.",
+    gitHub: "https://github.com/V24039/Countries-Details",
+    projectLink: "https://venu-countries-details.netlify.app/",
+    techUsed: ["ReactJs", "TypeScript", "CSS", "Rest API"],
   },
+  // --- Open Source Contributions from Resume ---
   {
-    label: "Frontend Fundamentals Reference",
+    label: "One Army (Open Source Contribution)",
     descp:
-      "A self-built interactive reference covering JavaScript fundamentals — closures, prototypes, this-binding, scope, promises and async patterns, and collection methods — alongside CSS layout demos, each with runnable examples. Built around a reusable component set (accordion, syntax-highlighted code display, in-page index) with nested routing and Redux Toolkit for state.",
-    gitHub: "https://github.com/V24039/learn_web",
-    techUsed: ["ReactJs", "TypeScript", "Vite", "Redux Toolkit", "React Router"],
-  },
-  {
-    label: "Event Platform",
-    descp:
-      "A multi-page events site built as a frontend engineering assignment, using the Next.js App Router and Tailwind. Structured around components designed for reuse across every page — image carousel, tab navigation, and text/image content blocks — with scroll-triggered animations throughout.",
-    gitHub: "https://github.com/V24039/css-FrontendTask",
-    techUsed: ["NextJs", "JavaScript", "Tailwind CSS", "React Icons"],
+      "Contributed to the One Army platform by fixing UI bugs (e.g., preventing empty comments via validation) and enhancing features (e.g., preventing map pin additions for incomplete profiles). Wrote unit and end-to-end tests using Jest and Cypress to ensure code quality.",
+    gitHub: "https://github.com/ONEARMY",
+    techUsed: ["ReactJs", "TypeScript", "Jest", "Cypress"],
   },
 ];
