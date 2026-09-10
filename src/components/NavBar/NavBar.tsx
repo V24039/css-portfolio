@@ -5,11 +5,12 @@ import { navLinks } from "./const";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
-const toggleClasses =
-  "flex w-full items-center cursor-pointer font-medium p-2 rounded-lg text-gray-500 hover:bg-cyan-100 hover:dark:bg-emerald-50";
+const menuItem =
+  "flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-violet-50 hover:text-violet-700 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white";
+const navItem =
+  "cursor-pointer rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white";
 
-const focusClasses =
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500";
+const navItemActive = "text-slate-900 dark:text-white";
 
 type ThemeMode = "light" | "dark" | "system";
 
@@ -71,47 +72,80 @@ const NavBar = () => {
     }
   };
 
-  const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] = [
-    { mode: "dark", label: "Dark", icon: <CiDark size={20} /> },
-    { mode: "light", label: "Light", icon: <CiLight size={20} /> },
-    { mode: "system", label: "System", icon: <GrSystem size={20} /> },
-  ];
+  const themeOptions: { mode: ThemeMode; label: string; icon: JSX.Element }[] =
+    [
+      { mode: "dark", label: "Dark", icon: <CiDark size={18} /> },
+      { mode: "light", label: "Light", icon: <CiLight size={18} /> },
+      { mode: "system", label: "System", icon: <GrSystem size={16} /> },
+    ];
 
   return (
-    <nav id="Navbar" className="sticky top-0 z-50 transition-colors duration-300 backdrop-blur-sm bg-slate-200/80 dark:bg-black/80">
-      <div className="flex justify-between items-center w-full h-20 text-black dark:text-white px-4 max-w-7xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl sm font-signature ml-2 text-black dark:text-white">
-          Venu G Soganadgi
-        </h1>
-        <div className="flex justify-between items-center gap-4">
-          <div className="relative">
+    <nav id="Navbar" className="sticky top-0 z-50 px-4 pt-4 md:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-2xl border border-slate-200/80 bg-white/70 px-4 backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04]">
+        <Link
+          to="Home"
+          smooth
+          duration={500}
+          className="group flex cursor-pointer items-center gap-3"
+        >
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 font-display text-sm font-bold text-white">
+            VS
+          </span>
+          <span className="hidden font-display text-base font-semibold tracking-tight sm:block">
+            Venu G Soganadgi
+          </span>
+        </Link>
+
+        <div className="flex items-center gap-1">
+          <ul className="hidden items-center md:flex">
+            {navLinks.map(({ id, label }) => (
+              <li key={`navId-${id}`}>
+                <Link
+                  to={label}
+                  smooth
+                  spy
+                  offset={-96}
+                  duration={500}
+                  className={navItem}
+                  activeClass={navItemActive}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="relative ml-1">
             <button
               type="button"
               onClick={handleToggleClick}
               aria-label="Change color theme"
               aria-haspopup="menu"
               aria-expanded={showToggleMenu}
-              className={`flex items-center rounded-md p-1 ${focusClasses}`}
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-slate-600 transition-colors duration-200 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
             >
-              {isDark ? <CiDark size={30} /> : <CiLight size={30} />}
+              {isDark ? <CiDark size={20} /> : <CiLight size={20} />}
             </button>
             {showToggleMenu && (
               <div
                 role="menu"
-                className="absolute right-0 top-12 bg-white/90 backdrop-blur-md rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800/90 dark:text-slate-400 shadow-lg border border-gray-200 dark:border-slate-700"
+                className="absolute right-0 top-12 w-40 rounded-xl border border-slate-200 bg-white/90 p-1.5 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-ink-900/95"
               >
-                <ul className="space-y-2">
+                <ul className="space-y-0.5">
                   {themeOptions.map(({ mode, label, icon }) => (
                     <li key={`toggle-${mode}`}>
                       <button
                         type="button"
                         role="menuitemradio"
                         aria-checked={themeMode === mode}
-                        className={`${toggleClasses} ${focusClasses}`}
+                        className={menuItem}
                         onClick={() => handleThemeChange(mode)}
                       >
                         {icon}
-                        <span className="px-2">{label}</span>
+                        <span>{label}</span>
+                        {themeMode === mode && (
+                          <span className="ml-auto h-1.5 w-1.5 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
+                        )}
                       </button>
                     </li>
                   ))}
@@ -119,52 +153,43 @@ const NavBar = () => {
               </div>
             )}
           </div>
-          <ul className="hidden md:flex">
-            {navLinks.map(({ id, label }) => (
-              <li
-                key={`navId-${id}`}
-                className="p-2 cursor-pointer rounded-md font-medium text-gray-500 hover:bg-cyan-100 hover:dark:bg-emerald-50 duration-75"
-              >
-                <Link to={label} smooth duration={500}>
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+
           <button
             type="button"
             onClick={handleMenuClick}
-            aria-label={showMenu ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              showMenu ? "Close navigation menu" : "Open navigation menu"
+            }
             aria-expanded={showMenu}
             aria-controls="mobile-nav-menu"
-            className={`cursor-pointer right-10 z-10 rounded-md p-1 text-gray-500 md:hidden ${focusClasses}`}
+            className="flex h-9 w-9 items-center justify-center rounded-xl text-slate-600 transition-colors duration-200 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5 md:hidden"
           >
-            {showMenu ? <FaTimes size={20} /> : <FaBars size={20} />}
+            {showMenu ? <FaTimes size={16} /> : <FaBars size={16} />}
           </button>
-          {showMenu && (
-            <ul
-              id="mobile-nav-menu"
-              className="md:hidden fixed top-6 right-3 bg-white rounded-lg p-4 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400"
-            >
-              {navLinks.map(({ id, label }) => (
-                <li
-                  key={`navId-mobile-${id}`}
-                  className="px-4 cursor-pointer font-medium text-gray-500 hover:bg-emerald-50 duration-75"
-                >
-                  <Link
-                    onClick={handleMenuClick}
-                    to={label}
-                    smooth
-                    duration={500}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       </div>
+
+      {showMenu && (
+        <ul
+          id="mobile-nav-menu"
+          className="mx-auto mt-2 max-w-7xl rounded-2xl border border-slate-200/80 bg-white/90 p-2 backdrop-blur-xl dark:border-white/10 dark:bg-ink-900/95 md:hidden"
+        >
+          {navLinks.map(({ id, label }) => (
+            <li key={`navId-mobile-${id}`}>
+              <Link
+                onClick={handleMenuClick}
+                to={label}
+                smooth
+                offset={-96}
+                duration={500}
+                className={menuItem}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 };
